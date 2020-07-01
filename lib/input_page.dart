@@ -35,6 +35,7 @@ class _InputPageState extends State<InputPage> {
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             // Genders
             Expanded(
@@ -84,10 +85,19 @@ class _InputPageState extends State<InputPage> {
             SizedBox(
               height: separationSize,
             ),
-            Container(
-              color: accentColor,
-              height: 50,
-            )
+            GestureDetector(
+              child: Container(
+                child: Center(
+                  child: Text(
+                    'CALCULATE',
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                color: accentColor,
+                height: 50,
+              ),
+              onTap: () => Navigator.pushNamed(context, '/results'),
+            ),
           ],
         ));
   }
