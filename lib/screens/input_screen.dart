@@ -1,19 +1,20 @@
-import 'package:bmi_calculator/round_icon_button.dart';
+import 'file:///C:/Users/inner/StudioProjects/bmi-calculator-flutter/lib/components/round_icon_button.dart';
+import 'package:bmi_calculator/components/action_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'bmi_card.dart';
-import 'constants.dart';
-import 'gender.dart';
-import 'icon_content.dart';
+import '../components/bmi_card.dart';
+import '../constants.dart';
+import '../gender.dart';
+import '../components/icon_content.dart';
 
-class InputPage extends StatefulWidget {
+class InputScreen extends StatefulWidget {
   @override
-  _InputPageState createState() => _InputPageState();
+  _InputScreenState createState() => _InputScreenState();
 }
 
-class _InputPageState extends State<InputPage> {
+class _InputScreenState extends State<InputScreen> {
   Gender activeGender = Gender.Male;
   int height = 180;
   int weight = 75;
@@ -85,19 +86,9 @@ class _InputPageState extends State<InputPage> {
             SizedBox(
               height: separationSize,
             ),
-            GestureDetector(
-              child: Container(
-                child: Center(
-                  child: Text(
-                    'CALCULATE',
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                color: accentColor,
-                height: 50,
-              ),
-              onTap: () => Navigator.pushNamed(context, '/results'),
-            ),
+            ActionButton(
+                text: "CALCULATE",
+                onTap: () => Navigator.pushNamed(context, '/results')),
           ],
         ));
   }

@@ -1,8 +1,9 @@
-import 'package:bmi_calculator/bmi_card.dart';
+import 'file:///C:/Users/inner/StudioProjects/bmi-calculator-flutter/lib/components/bmi_card.dart';
+import 'package:bmi_calculator/components/action_button.dart';
 import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
 
-class ResultsPage extends StatelessWidget {
+class ResultsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,12 +45,13 @@ class ResultsPage extends StatelessWidget {
                     Text(
                       'explanation blah blah blah blah',
                       style: TextStyle(fontSize: 20),
-                    )
+                    ),
                   ],
                 ),
               ),
             ),
-          )
+          ),
+          ActionButton(text: "EDIT", onTap: () => Navigator.pop(context)),
         ],
       ),
     );
